@@ -30,5 +30,5 @@ object JsonReader extends App {
 
   res.map{row => val json_row = parse(row)
     json_row.extract[JsRow]
-  }.collect().foreach{println _}
+  }.toLocalIterator.foreach{println _}
 }
