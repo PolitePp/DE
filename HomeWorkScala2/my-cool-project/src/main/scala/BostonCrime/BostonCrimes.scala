@@ -51,7 +51,7 @@ object BostonCrimes extends App {
       "from (" +
       "select coalesce(district, 'Not defined') as district, month, count(*) as medium " +
       "from crime " +
-      "group by coalesce(district, 'Not defined'), month " +
+      "group by coalesce(district, 'Not defined'), month, year " +
       ") s1 group by district"
   )
 
